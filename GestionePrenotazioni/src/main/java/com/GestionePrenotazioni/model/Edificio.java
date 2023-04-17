@@ -30,7 +30,7 @@ public class Edificio implements Serializable{
 	private String nome;
 	private String indirizzo;
 	private String città;
-	@OneToOne(mappedBy = "edificio", cascade = CascadeType.MERGE)
+	@OneToMany(mappedBy = "edificio", cascade = CascadeType.MERGE)
 	private Postazione postazione;
 
 	

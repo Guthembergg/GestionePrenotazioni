@@ -10,6 +10,7 @@ import jakarta.persistence.Enumerated;
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
+import jakarta.persistence.ManyToOne;
 import jakarta.persistence.OneToMany;
 import jakarta.persistence.OneToOne;
 import jakarta.persistence.Table;
@@ -33,7 +34,7 @@ public class Postazione implements Serializable{
 	@Enumerated(EnumType.STRING)
 	private Tipo_postazione tipologia;
 	private Integer num_max;
-	@OneToOne( cascade = CascadeType.MERGE)
+	@ManyToOne( cascade = CascadeType.MERGE)
 	private Edificio edificio;
 	@OneToMany(mappedBy = "postazione")
 	private List<Prenotazione> prenotazione;
