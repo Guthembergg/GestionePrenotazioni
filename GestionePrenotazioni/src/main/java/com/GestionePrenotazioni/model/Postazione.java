@@ -45,7 +45,6 @@ public class Postazione implements Serializable{
 		this.tipologia = tipologia;
 		this.num_max = num_max;
 		this.edificio = edificio;
-		this.edificio.setPostazione(this);
 		this.prenotazione =  prenotazione;
 		if(prenotazione != null) {this.prenotazione.forEach(e->e.setPostazione(this));}
 		
