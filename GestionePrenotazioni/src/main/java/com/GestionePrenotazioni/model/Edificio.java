@@ -31,10 +31,10 @@ public class Edificio implements Serializable{
 	private String indirizzo;
 	private String città;
 	@OneToMany(mappedBy = "edificio", cascade = CascadeType.MERGE)
-	private Postazione postazione;
+	private List<Postazione> postazione;
 
 	
-	public Edificio(String nome, String indirizzo, String città, Postazione postazione,
+	public Edificio(String nome, String indirizzo, String città, List<Postazione> postazione,
 			List<Prenotazione> prenotazione) {
 		super();
 		this.nome = nome;
@@ -42,7 +42,7 @@ public class Edificio implements Serializable{
 		this.città = città;
 		this.postazione = postazione;
 		if(postazione != null ) {
-		this.postazione.setEdificio(this);
+		this.postazione.forEach(e->e.setEdificio(this));
 		}
 	} 
 	
