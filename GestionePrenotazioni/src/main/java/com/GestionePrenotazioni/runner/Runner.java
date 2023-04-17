@@ -10,8 +10,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 	import org.springframework.stereotype.Component;
 
 import com.GestionePrenotazioni.model.Postazione;
+import com.GestionePrenotazioni.model.Prenotazione;
 import com.GestionePrenotazioni.model.Tipo_postazione;
 import com.GestionePrenotazioni.repository.PostazioneDAORepository;
+import com.GestionePrenotazioni.repository.PrenotazioneDAORepository;
 import com.GestionePrenotazioni.service.EdificioService;
 import com.GestionePrenotazioni.service.PostazioneService;
 import com.GestionePrenotazioni.service.PrenotazioneService;
@@ -29,7 +31,7 @@ public class Runner implements ApplicationRunner{
 			@Autowired PostazioneService postazioneService;
 			@Autowired PrenotazioneService prenotazioneService;
             @Autowired PostazioneDAORepository postazioneDAORepository;
-
+            @Autowired PrenotazioneDAORepository prenotazioneDAORepository;
 		@Override
 		public void run(ApplicationArguments args) throws Exception {
 		System.out.println("Run..");
@@ -47,7 +49,10 @@ public class Runner implements ApplicationRunner{
 
 		List<Postazione>p=postazioneDAORepository.findByCittàAndTipologia("San Arturo",Tipo_postazione.PRIVATO); //Questo era il nome fake della città che mi ha creato 
 		p.forEach(e->System.out.println(e.getId())); //funziona! riesce a trovare la postazione cercando per città e tipologia come richiesto
+		//List<Prenotazione> p3= prenotazioneDAORepository.findByDataBetween(LocalDate.now(), LocalDate.now().plusDays(2),postazioneService.findPostazioneById(1l) );
+			//p3.forEach(e->System.out.println(e.getId()));
 		
+		//Anche quessta query funziona!
 		
 		}
 
