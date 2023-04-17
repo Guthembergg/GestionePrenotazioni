@@ -24,7 +24,7 @@ public class EdificioConfiguration {
 
 	@Bean("ParamsEdificio")
 	@Scope("prototype")
-	public Edificio paramsEdificio(String nome, String indirizzo, String città, Postazione postazione,
+	public Edificio paramsEdificio(String nome, String indirizzo, String città, List<Postazione> postazione,
 			List<Prenotazione> prenotazione) {
 		return new Edificio(nome, indirizzo, città,  postazione,
 				 prenotazione);

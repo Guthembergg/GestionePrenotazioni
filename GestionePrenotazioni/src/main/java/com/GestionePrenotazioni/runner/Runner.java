@@ -36,17 +36,17 @@ public class Runner implements ApplicationRunner{
 		//Test di tutte le funzionalità richieste:
 		
 		
-//		utenteService.createFakeUtente();
-//		utenteService.createFakeUtente();
+		utenteService.createFakeUtente();
+		utenteService.createFakeUtente();
 
-//		edificioService.createFakeEdificio();
+		edificioService.createFakeEdificio();
 		//postazioneService.createPostazione("postazione wow", Tipo_postazione.OPENSPACE, 20, edificioService.findEdificioById(1l),null);
 		//prenotazioneService.createPrenotazione(utenteService.findUtenteById(1l), postazioneService.findPostazioneById(1l), LocalDate.now().plusDays(2));
 		//prenotazioneService.createPrenotazione(utenteService.findUtenteById(2l), postazioneService.findPostazioneById(1l), LocalDate.now().plusDays(2));//non lo fa aggiungere perchè la postazione è occupata per quella data come richiesto
-//		prenotazioneService.createPrenotazione(utenteService.findUtenteById(1l), postazioneService.findPostazioneById(2l), LocalDate.now().plusDays(2)); //non lo fa aggiungere perchè l utente 1 ha già prenotato in quella data come richiesto
+		prenotazioneService.createPrenotazione(utenteService.findUtenteById(1l), postazioneService.findPostazioneById(2l), LocalDate.now().plusDays(2)); //non lo fa aggiungere perchè l utente 1 ha già prenotato in quella data come richiesto
 
-//		List<Postazione>p=postazioneDAORepository.findByCittàAndTipologia("San Arturo",Tipo_postazione.PRIVATO); //Questo era il nome fake della città che mi ha creato 
-//		p.forEach(e->System.out.println(e.getId())); //funziona! riesce a trovare la postazione cercando per città e tipologia come richiesto
+		List<Postazione>p=postazioneDAORepository.findByCittàAndTipologia("San Arturo",Tipo_postazione.PRIVATO); //Questo era il nome fake della città che mi ha creato 
+		p.forEach(e->System.out.println(e.getId())); //funziona! riesce a trovare la postazione cercando per città e tipologia come richiesto
 		
 		
 		}
